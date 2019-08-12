@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DatShop.Model.Abstract
-{
-    class InterFields
+{    public abstract class InterFields : IAuditable, ISeoable, ISwitchable
     {
+        public DateTime CreatedDate { set; get; }
+        public string CreatedBy { set; get; }
+        public DateTime UpdateDate { set; get; }
+        public string UpdateBy { set; get; }
+        public string MetaKeyword { set; get; }
+        public string MetaDescription { set; get; }
+        public bool Status { set; get; }
     }
 }
