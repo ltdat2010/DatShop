@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatShop.Model.Models
+namespace DatShop.Model.Abstract
 {
-    class Seoable
+    public abstract class Seoable : ISeoable
     {
+        public string MetaKeyword { set; get; }
+        public string MetaDescription { set; get; }
     }
 }

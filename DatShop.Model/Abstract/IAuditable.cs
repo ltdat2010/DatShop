@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatShop.Model.Models
+namespace DatShop.Model.Abstract
 {
-    interface IAuditable
+    public interface IAuditable
     {
         DateTime CreatedDate { set; get; }
         string CreatedBy { set; get; }

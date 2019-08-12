@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatShop.Model.Models
+namespace DatShop.Model.Abstract
 {
-    interface ISeoable
+    public interface ISeoable
     {
+        string MetaKeyword { set; get; }
+        string MetaDescription { set; get; }
+
     }
 }

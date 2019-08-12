@@ -48,13 +48,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\Auditable.cs" />
-    <Compile Include="Abstract\IAuditable.cs" />
-    <Compile Include="Abstract\InterFields.cs" />
-    <Compile Include="Abstract\ISeoable.cs" />
-    <Compile Include="Abstract\IStatus.cs" />
-    <Compile Include="Abstract\Seoable.cs" />
-    <Compile Include="Abstract\Status.cs" />
+    <Compile Include="Abstract\Auditable.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Abstract\IAuditable.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Abstract\InterFields.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Abstract\ISeoable.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Abstract\ISwitchable.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Abstract\Seoable.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Abstract\Switchable.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

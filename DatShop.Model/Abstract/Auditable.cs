@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatShop.Model.Models
+namespace DatShop.Model.Abstract
 {
-    class Auditable 
+    public abstract class Auditable : IAuditable
     {
+        public DateTime CreatedDate { set; get; }
+        public string CreatedBy { set; get; }
+        public DateTime UpdateDate { set; get; }
+        public string UpdateBy { set; get; }
     }
 }

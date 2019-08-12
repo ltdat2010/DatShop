@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatShop.Model.Models
+namespace DatShop.Model.Abstract
 {
-    class Status
+    public abstract class Switchable : ISwitchable
     {
+        public bool Status { set; get; }
     }
 }
