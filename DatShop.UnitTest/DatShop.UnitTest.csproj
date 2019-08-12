@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7AC5DC0C-400F-4073-A277-EC0B70D8D3B2}</ProjectGuid>
+    <ProjectGuid>{114106D4-9DD9-4A92-8174-4EB6359D4D90}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DatShop.UnitTest</RootNamespace>
@@ -49,34 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DatShop.Common\DatShop.Common.csproj">
-      <Project>{b9db71fd-5274-4715-be48-50d9e09d6943}</Project>
-      <Name>DatShop.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DatShop.Data\DatShop.Data.csproj">
-      <Project>{25b1f8a2-b3e1-4abc-b327-3e60568cd0a7}</Project>
-      <Name>DatShop.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DatShop.Model\DatShop.Model.csproj">
-      <Project>{11e92b2e-a887-4c93-bbe8-2f497888d013}</Project>
-      <Name>DatShop.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DatShop.Service\DatShop.Service.csproj">
-      <Project>{ddffc938-ec56-4881-b7fc-3aa7b2e096ea}</Project>
-      <Name>DatShop.Service</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DatShop.Web\DatShop.Web.csproj">
-      <Project>{cddf1555-9f14-416d-a6d1-25f7e2eaa3c7}</Project>
-      <Name>DatShop.Web</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
