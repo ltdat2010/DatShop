@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 namespace DatShop.Model.Models
 {
     [Table("Menus")]
-    class Menu
+    public class Menu
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { set; get; }
+        [StringLength(80)]
         public string Name { set; get; }
+        [StringLength(200)]
         public string URL { set; get; }
         public int DisplayOrder { set; get; }
         public int Target { set; get; }

@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DatShop.Model.Abstract;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DatShop.Model.Abstract;
 
 namespace DatShop.Model.Models
 {
     [Table("Pages")]
-    class Page : Seoable
+    public class Page : Seoable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        int ID { set; get; }
-
-        string Name { set; get; }
-
-        string Content { set; get; }
+        public int ID { set; get; }
+        [StringLength(80)]
+        public string Name { set; get; }
+        [StringLength(200)]
+        public string Content { set; get; }
     }
 }

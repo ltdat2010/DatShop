@@ -9,15 +9,14 @@ using System.Threading.Tasks;
 namespace DatShop.Model.Models
 {
     [Table("Tags")]
-    class Tag
+    public class Tag
     {
-        [Key]        
-        string ID { set; get; }
-
-        string Name { set; get; }
-
-        string Type { set; get; }
-
+        [Key]
+        public string ID { set; get; }
+        [StringLength(80)]
+        public string Name { set; get; }
+        [StringLength(40)]
+        public string Type { set; get; }
         public virtual IEnumerable<ProductTag> ProductTags { set; get; }
 
     }

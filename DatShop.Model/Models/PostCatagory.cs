@@ -11,26 +11,23 @@ using DatShop.Model.Abstract;
 namespace DatShop.Model.Models
 {
     [Table("PostCatagories")]
-    class PostCatagory : InterFields
+    public class PostCatagory : InterFields
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        int ID { set; get; }
-
-        string Name { set; get; }
-
-        string Alias { set; get; }
-
-        int ParentID { set; get; }
-
-        string Description { set; get; }
-
-        int DisplayOrder { set; get; }
-
-        string Image { set; get; }
-
-        XElement MoreImage { set; get; }
-        bool HomeFlag { set; get; }
+        public int ID { set; get; }
+        [StringLength(80)]
+        public string Name { set; get; }
+        [StringLength(80)]
+        public string Alias { set; get; }
+        public int ParentID { set; get; }
+        [StringLength(200)]
+        public string Description { set; get; }
+        public int DisplayOrder { set; get; }
+        
+        public string Image { set; get; }
+        public XElement MoreImage { set; get; }
+        public bool HomeFlag { set; get; }
 
         public virtual IEnumerable<Post> Posts { set; get; }
 

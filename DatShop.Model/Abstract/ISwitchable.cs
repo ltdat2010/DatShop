@@ -2,6 +2,6 @@
 {
     public interface ISwitchable
     {
-        public bool Status { set; get; }
+        bool Status { set; get; }
     }
 }

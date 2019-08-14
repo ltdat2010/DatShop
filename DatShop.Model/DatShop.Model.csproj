@@ -92,10 +92,6 @@
       <Project>{b9db71fd-5274-4715-be48-50d9e09d6943}</Project>
       <Name>DatShop.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DatShop.Data\DatShop.Data.csproj">
-      <Project>{25b1f8a2-b3e1-4abc-b327-3e60568cd0a7}</Project>
-      <Name>DatShop.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

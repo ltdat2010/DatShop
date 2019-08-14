@@ -14,9 +14,9 @@ namespace DatShop.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { set; get; }
-
+        [StringLength(80)]
         public string Code { set; get; }
-
+        [StringLength(80)]
         public string ValueString { set; get; }
 
         public int ValueInt { set; get; }

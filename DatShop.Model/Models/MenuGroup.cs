@@ -9,14 +9,13 @@ using System.Threading.Tasks;
 namespace DatShop.Model.Models
 {
     [Table("MenuGroups")]
-    class MenuGroup
+    public class MenuGroup
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { set; get; }
-        
+        [StringLength(80)]
         public string Name { set; get; }
-
         public virtual Menu Menus { set; get; }
     }
 }

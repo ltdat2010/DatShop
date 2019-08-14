@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DatShop.Model.Models
 {
     [Table("Footers")]
-    class Footer
+    public class Footer
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        int ID { set; get; }
-
-        string Content { set; get; }
-
-
+        public int ID { set; get; }
+        [StringLength(200)]
+        public string Content { set; get; }
     }
 }

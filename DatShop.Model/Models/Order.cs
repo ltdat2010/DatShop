@@ -10,19 +10,25 @@ using DatShop.Model.Abstract;
 namespace DatShop.Model.Models
 {
     [Table("Orders")]
-    class Order : Auditable
+    public class Order : Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        int ID { set; get; }
-
-        string CustomerName { set; get; }
-        string CustomerAddress { set; get; }
-        string CustomerEmail { set; get; }
-        string CustomerMobile { set; get; }
-        string CustomerMessage { set; get; }
-        string PaymentMethod { set; get; }
-        string PaymentStatus { set; get; }
+        public int ID { set; get; }
+        [StringLength(80)]
+        public string CustomerName { set; get; }
+        [StringLength(80)]
+        public string CustomerAddress { set; get; }
+        [StringLength(40)]
+        public string CustomerEmail { set; get; }
+        [StringLength(20)]
+        public string CustomerMobile { set; get; }
+        [StringLength(200)]
+        public string CustomerMessage { set; get; }
+        [StringLength(40)]
+        public string PaymentMethod { set; get; }
+        [StringLength(40)]
+        public string PaymentStatus { set; get; }
 
 
         public IEnumerable<OrderDetail> OrderDetails { set; get; }
