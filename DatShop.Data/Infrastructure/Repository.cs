@@ -20,13 +20,16 @@ namespace DatShop.Data.Infrastructure
         public Repository(DatShopDbContext dbContext)
         {
             this.dbContext = dbContext;
+            //DbSet are created from a DbContext using the DbContext.Set() 
             this.dbSet = dbContext.Set<TEntity>();
         }
 
-        public virtual IEnumerable<TEntity> Get(
-            Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-            string includeProperties = "")
+        public virtual IEnumerable<TEntity> Get
+                                                (
+                                                Expression<Func<TEntity, bool>> filter = null,
+                                                Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+                                                string includeProperties = ""
+                                                )
         {
             IQueryable<TEntity> query = dbSet;
 
@@ -36,7 +39,7 @@ namespace DatShop.Data.Infrastructure
             }
 
             foreach (var includeProperty in includeProperties.Split
-                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
             {
                 query = query.Include(includeProperty);
             }
