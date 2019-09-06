@@ -24,8 +24,8 @@ namespace DatShop.Model.Models
         [StringLength(200)]
         public string Description { set; get; }
         public int DisplayOrder { set; get; }
-        public string Image { set; get; }
-        public XElement MoreImage { set; get; }
+        public string Image { set; get; }        
+        //public XElement MoreImage { set; get; }
         public bool HomeFlag { set; get; }
 
         public virtual IEnumerable<Product> Products { set; get; }

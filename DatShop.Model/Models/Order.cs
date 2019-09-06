@@ -29,8 +29,6 @@ namespace DatShop.Model.Models
         public string PaymentMethod { set; get; }
         [StringLength(40)]
         public string PaymentStatus { set; get; }
-
-
         public IEnumerable<OrderDetail> OrderDetails { set; get; }
 
     }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DatShop.Data.Infrastructure
 {
-    public interface IUnitOfWork
+    public interface IDbFactory: IDisposable
     {
-        void Commit();
-
+        //DatShopDbContext Get();
+        DatShopDbContext Init();
     }
 }

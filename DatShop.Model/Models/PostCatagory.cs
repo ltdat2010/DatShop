@@ -23,12 +23,10 @@ namespace DatShop.Model.Models
         public int ParentID { set; get; }
         [StringLength(200)]
         public string Description { set; get; }
-        public int DisplayOrder { set; get; }
-        
+        public int DisplayOrder { set; get; }        
         public string Image { set; get; }
-        public XElement MoreImage { set; get; }
+        //public XElement MoreImage { set; get; }
         public bool HomeFlag { set; get; }
-
         public virtual IEnumerable<Post> Posts { set; get; }
 
     }

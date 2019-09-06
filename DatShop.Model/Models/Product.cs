@@ -25,7 +25,7 @@ namespace DatShop.Model.Models
         [ForeignKey("ProductCatagoryID")]
         public virtual ProductCatagory ProductCatagory { set; get; }
         public string Image { set; get; }
-        public XElement MoreImage { set; get; }
+        //public XElement MoreImage { set; get; }
         [StringLength(200)]
         public string Description { set; get; }
         [StringLength(200)]
