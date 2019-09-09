@@ -4,7 +4,7 @@ using DatShop.Model.Models;
 
 namespace DatShop.Data.Repository
 {
-    public interface IPageRepository
+    public interface IPageRepository : IRepository<Page>
     {
 
     }

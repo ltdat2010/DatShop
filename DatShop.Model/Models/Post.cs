@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatShop.Model.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace DatShop.Model.Models
 {
     [Table("Posts")]
-    public  class Post
+    public  class Post: InterFields
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,7 +21,9 @@ namespace DatShop.Model.Models
         public string Alias { set; get; }
         public int PostCatagoryID { set; get; }
         [ForeignKey("PostCatagoryID")]
-        public virtual PostCatagory PostCatagory { set; get; } 
+        public virtual PostCatagory PostCatagory { set; get; }
+        
+        public virtual IEnumerable<Tag> Tags { set; get; }
 
 
     }

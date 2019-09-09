@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DatShop.Data.Infrastructure;
 using DatShop.Data.Repository;
 using DatShop.Model.Models;
@@ -18,7 +16,7 @@ namespace DatShop.Service
         IEnumerable<Post> GetAll();
         IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow);
         Post GetById(int id);
-        IEnumerable<Post> GetAllTagPaging(int page, int pageSize, out int totalRow);
+        IEnumerable<Post> GetAllByTagPaging(string tag,int page, int pageSize, out int totalRow);
         void SaveChanges();
 
     }
@@ -34,28 +32,28 @@ namespace DatShop.Service
         }
         public void Add(Post post)
         {
-            throw new NotImplementedException();
+            _iPostRepository.Add(post);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _iPostRepository.Delete(id);
         }
 
         public IEnumerable<Post> GetAll()
         {
-            throw new NotImplementedException();
+            return _iPostRepository.GetAll(new string[] { "PostCatagory" });
+        }
+
+        public IEnumerable<Post> GetAllByTagPaging(string tag,int page, int pageSize, out int totalRow)
+        {
+            return _iPostRepository.GetMultiPaging(x=>x.Status ,out totalRow ,page, pageSize );
         }
 
         public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)
         {
             throw new NotImplementedException();
-        }
-
-        public IEnumerable<Post> GetAllTagPaging(int page, int pageSize, out int totalRow)
-        {
-            throw new NotImplementedException();
-        }
+        }      
 
         public Post GetById(int id)
         {

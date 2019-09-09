@@ -2,7 +2,7 @@
 using DatShop.Model.Models;
 namespace DatShop.Data.Repository
 {
-    public interface IPostRepository
+    public interface IPostRepository: IRepository<Post>
     {
 
     }
