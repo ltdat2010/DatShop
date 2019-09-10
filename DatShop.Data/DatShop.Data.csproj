@@ -64,8 +64,13 @@
     <Compile Include="Migrations\201909100204144_Update_PostTag_Entity.Designer.cs">
       <DependentUpon>201909100204144_Update_PostTag_Entity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909100909180_Add_Errors.cs" />
+    <Compile Include="Migrations\201909100909180_Add_Errors.Designer.cs">
+      <DependentUpon>201909100909180_Add_Errors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ErrorRepository.cs" />
     <Compile Include="Repository\FooterRepository.cs" />
     <Compile Include="Repository\MenuGroupRepository.cs" />
     <Compile Include="Repository\MenuRepository.cs" />
@@ -106,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909100204144_Update_PostTag_Entity.resx">
       <DependentUpon>201909100204144_Update_PostTag_Entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909100909180_Add_Errors.resx">
+      <DependentUpon>201909100909180_Add_Errors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

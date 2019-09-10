@@ -69,6 +69,7 @@
     <Compile Include="Abstract\Switchable.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Models\Error.cs" />
     <Compile Include="Models\Footer.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\MenuGroup.cs" />

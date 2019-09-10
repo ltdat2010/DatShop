@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{114106D4-9DD9-4A92-8174-4EB6359D4D90}</ProjectGuid>
+    <ProjectGuid>{85B17CC4-9B19-4E17-920B-84E0033CFDFD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DatShop.UnitTest</RootNamespace>
-    <AssemblyName>DatShop.UnitTest</AssemblyName>
+    <RootNamespace>DatShop.UnitTestProject3</RootNamespace>
+    <AssemblyName>DatShop.UnitTestProject3</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -39,12 +39,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -52,34 +46,14 @@
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PostCatagoryRepositoryTest.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DatShop.Common\DatShop.Common.csproj">
-      <Project>{b9db71fd-5274-4715-be48-50d9e09d6943}</Project>
-      <Name>DatShop.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DatShop.Data\DatShop.Data.csproj">
-      <Project>{25b1f8a2-b3e1-4abc-b327-3e60568cd0a7}</Project>
-      <Name>DatShop.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DatShop.Model\DatShop.Model.csproj">
-      <Project>{11e92b2e-a887-4c93-bbe8-2f497888d013}</Project>
-      <Name>DatShop.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DatShop.Service\DatShop.Service.csproj">
-      <Project>{ddffc938-ec56-4881-b7fc-3aa7b2e096ea}</Project>
-      <Name>DatShop.Service</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
