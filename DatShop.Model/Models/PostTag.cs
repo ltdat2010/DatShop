@@ -7,9 +7,10 @@ namespace DatShop.Model.Models
     public class PostTag
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID { set; get; }
         public int PostID { set; get; }
-
-        [Key]
+                
         [Column(TypeName = "varchar")]
         [MaxLength(50)]
         public string TagID { set; get; }

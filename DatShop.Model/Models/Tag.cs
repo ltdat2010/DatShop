@@ -12,6 +12,8 @@ namespace DatShop.Model.Models
     public class Tag
     {
         [Key]
+        [Column(TypeName = "varchar")]
+        [MaxLength(50)]
         public string ID { set; get; }
         [StringLength(80)]
         public string Name { set; get; }
