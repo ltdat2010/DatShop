@@ -1,36 +1,112 @@
-﻿using DatShop.Web.Infrastructure.Core;
-using System.Collections.Generic;
+﻿using DatShop.Model.Models;
+using DatShop.Service;
+using DatShop.Web.Infrastructure.Core;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 
 namespace DatShop.Web.Api
 {
+    [RoutePrefix("api/postcatafory")]
     public class PostCatagoryController : ApiControllerBase
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        private IPostCatagoryService _iPostCatagoryService;
+
+        public PostCatagoryController(
+            IErrorService iErrorService,
+            IPostCatagoryService iPostCatagoryService
+            ) : base(iErrorService)
         {
-            return new string[] { "value1", "value2" };
+            _iPostCatagoryService = iPostCatagoryService;
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        //Create
+        public HttpResponseMessage Post(HttpRequestMessage httpRequestMessage, PostCatagory postCatagory)
         {
-            return "value";
+            return CreateHttpResponse(httpRequestMessage, () =>
+            {
+                HttpResponseMessage _httpResponseMessage = null;
+                if (ModelState.IsValid)
+                {
+                    httpRequestMessage.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var postCata = _iPostCatagoryService.Add(postCatagory);
+                    _iPostCatagoryService.SaveChange();
+
+                    _httpResponseMessage = httpRequestMessage.CreateResponse(HttpStatusCode.OK, postCata);
+                }
+                return _httpResponseMessage;
+            }
+             );
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+        //Update
+        public HttpResponseMessage Put(HttpRequestMessage httpRequestMessage, PostCatagory postCatagory)
         {
+            return CreateHttpResponse(httpRequestMessage, () =>
+            {
+                HttpResponseMessage _httpResponseMessage = null;
+                if (ModelState.IsValid)
+                {
+                    httpRequestMessage.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    _iPostCatagoryService.Update(postCatagory);
+                    _iPostCatagoryService.SaveChange();
+
+                    _httpResponseMessage = httpRequestMessage.CreateResponse(HttpStatusCode.OK);
+                }
+                return _httpResponseMessage;
+            }
+             );
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        //Delete
+        public HttpResponseMessage Delete(HttpRequestMessage httpRequestMessage, int id)
         {
+            return CreateHttpResponse(httpRequestMessage, () =>
+            {
+                HttpResponseMessage _httpResponseMessage = null;
+                if (ModelState.IsValid)
+                {
+                    httpRequestMessage.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    _iPostCatagoryService.Delete(id);
+                    _iPostCatagoryService.SaveChange();
+
+                    _httpResponseMessage = httpRequestMessage.CreateResponse(HttpStatusCode.OK);
+                }
+                return _httpResponseMessage;
+            }
+             );
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
+        //Select
+        [Route("GetAll")]
+        public HttpResponseMessage Get(HttpRequestMessage httpRequestMessage, int id)
         {
+            return CreateHttpResponse(httpRequestMessage, () =>
+            {
+                HttpResponseMessage _httpResponseMessage = null;
+                if (ModelState.IsValid)
+                {
+                    httpRequestMessage.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var listPostCata = _iPostCatagoryService.GetAll();
+                    _iPostCatagoryService.SaveChange();
+
+                    _httpResponseMessage = httpRequestMessage.CreateResponse(HttpStatusCode.OK, listPostCata);
+                }
+                return _httpResponseMessage;
+            }
+             );
         }
     }
 }

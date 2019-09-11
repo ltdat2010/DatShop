@@ -7,7 +7,7 @@ namespace DatShop.Service
 {
     public interface IPostCatagoryService
     {
-        void Add(PostCatagory postCatagory);
+        PostCatagory Add(PostCatagory postCatagory);
 
         void Update(PostCatagory postCatagory);
 
@@ -34,9 +34,9 @@ namespace DatShop.Service
             this._iUnitOfWork = iUnitOfWork;
         }
 
-        public void Add(PostCatagory postCatagory)
+        public PostCatagory Add(PostCatagory postCatagory)
         {
-            _iPostCatagoryRepository.Add(postCatagory);
+            return _iPostCatagoryRepository.Add(postCatagory);
         }
 
         public void Delete(int id)
