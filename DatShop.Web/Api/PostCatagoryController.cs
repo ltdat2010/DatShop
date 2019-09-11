@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace DatShop.Web.Api
 {
-    [RoutePrefix("api/postcatafory")]
+    [RoutePrefix("Api/PostCatagory")]
     public class PostCatagoryController : ApiControllerBase
     {
         private IPostCatagoryService _iPostCatagoryService;
@@ -87,7 +87,7 @@ namespace DatShop.Web.Api
         }
 
         //Select
-        [Route("GetAll")]
+        //[Route("GetAll")]
         public HttpResponseMessage Get(HttpRequestMessage httpRequestMessage, int id)
         {
             return CreateHttpResponse(httpRequestMessage, () =>
