@@ -28,7 +28,7 @@ namespace DatShop.Service
         private IPostCatagoryRepository _iPostCatagoryRepository;
         private IUnitOfWork _iUnitOfWork;
 
-        public PostCatagoryService(IPostCatagoryRepository iPostCatagoryRepository, IUnitOfWork  iUnitOfWork)
+        public PostCatagoryService(IPostCatagoryRepository iPostCatagoryRepository, IUnitOfWork iUnitOfWork)
         {
             this._iPostCatagoryRepository = iPostCatagoryRepository;
             this._iUnitOfWork = iUnitOfWork;

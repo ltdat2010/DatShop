@@ -10,6 +10,7 @@ namespace DatShop.Data.Repository
     {
         public PostCatagoryRepository(IDbFactory dbFactory) : base(dbFactory)
         {
+
         }
     }
 }

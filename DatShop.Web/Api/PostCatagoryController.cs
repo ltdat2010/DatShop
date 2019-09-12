@@ -1,6 +1,10 @@
-﻿using DatShop.Model.Models;
+﻿using AutoMapper;
+using DatShop.Model.Models;
 using DatShop.Service;
 using DatShop.Web.Infrastructure.Core;
+using DatShop.Web.Infrastructure.Extensions;
+using DatShop.Web.Models;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -10,6 +14,7 @@ namespace DatShop.Web.Api
     [RoutePrefix("Api/PostCatagory")]
     public class PostCatagoryController : ApiControllerBase
     {
+        
         private IPostCatagoryService _iPostCatagoryService;
 
         public PostCatagoryController(
@@ -21,7 +26,8 @@ namespace DatShop.Web.Api
         }
 
         //Create
-        public HttpResponseMessage Post(HttpRequestMessage httpRequestMessage, PostCatagory postCatagory)
+        [Route("Add")]
+        public HttpResponseMessage Post(HttpRequestMessage httpRequestMessage, PostCatagoryViewModel postCatagoryViewModel)
         {
             return CreateHttpResponse(httpRequestMessage, () =>
             {
@@ -32,7 +38,9 @@ namespace DatShop.Web.Api
                 }
                 else
                 {
-                    var postCata = _iPostCatagoryService.Add(postCatagory);
+                    PostCatagory _postCatagory = new PostCatagory();
+                    _postCatagory.UpdatePostCatagory(postCatagoryViewModel);
+                    var postCata = _iPostCatagoryService.Add(_postCatagory);
                     _iPostCatagoryService.SaveChange();
 
                     _httpResponseMessage = httpRequestMessage.CreateResponse(HttpStatusCode.OK, postCata);
@@ -43,7 +51,8 @@ namespace DatShop.Web.Api
         }
 
         //Update
-        public HttpResponseMessage Put(HttpRequestMessage httpRequestMessage, PostCatagory postCatagory)
+        [Route("Update")]
+        public HttpResponseMessage Put(HttpRequestMessage httpRequestMessage, PostCatagoryViewModel postCatagoryViewModel)
         {
             return CreateHttpResponse(httpRequestMessage, () =>
             {
@@ -54,7 +63,9 @@ namespace DatShop.Web.Api
                 }
                 else
                 {
-                    _iPostCatagoryService.Update(postCatagory);
+                    var postCatagoryDb = _iPostCatagoryService.GetById(postCatagoryViewModel.ID);
+                    postCatagoryDb.UpdatePostCatagory(postCatagoryViewModel);
+                    _iPostCatagoryService.Update(postCatagoryDb);
                     _iPostCatagoryService.SaveChange();
 
                     _httpResponseMessage = httpRequestMessage.CreateResponse(HttpStatusCode.OK);
@@ -87,26 +98,21 @@ namespace DatShop.Web.Api
         }
 
         //Select
-        //[Route("GetAll")]
-        public HttpResponseMessage Get(HttpRequestMessage httpRequestMessage, int id)
+        [Route("GetAll")]
+        public HttpResponseMessage Get(HttpRequestMessage httpRequestMessage)
         {
             return CreateHttpResponse(httpRequestMessage, () =>
             {
-                HttpResponseMessage _httpResponseMessage = null;
-                if (ModelState.IsValid)
-                {
-                    httpRequestMessage.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    var listPostCata = _iPostCatagoryService.GetAll();
-                    _iPostCatagoryService.SaveChange();
+                var listPostCatagory = _iPostCatagoryService.GetAll();
 
-                    _httpResponseMessage = httpRequestMessage.CreateResponse(HttpStatusCode.OK, listPostCata);
-                }
+                var listPostCatagoryViewModel = Mapper.Map<List<PostCatagoryViewModel>>(listPostCatagory);
+
+                _iPostCatagoryService.SaveChange();
+
+                HttpResponseMessage _httpResponseMessage = httpRequestMessage.CreateResponse(HttpStatusCode.OK, listPostCatagory);
+
                 return _httpResponseMessage;
-            }
-             );
+            });
         }
     }
 }
