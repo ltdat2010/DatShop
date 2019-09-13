@@ -76,6 +76,7 @@ namespace DatShop.Web.Api
         }
 
         //Delete
+        [Route("Delete")]
         public HttpResponseMessage Delete(HttpRequestMessage httpRequestMessage, int id)
         {
             return CreateHttpResponse(httpRequestMessage, () =>
@@ -109,7 +110,7 @@ namespace DatShop.Web.Api
 
                 _iPostCatagoryService.SaveChange();
 
-                HttpResponseMessage _httpResponseMessage = httpRequestMessage.CreateResponse(HttpStatusCode.OK, listPostCatagory);
+                HttpResponseMessage _httpResponseMessage = httpRequestMessage.CreateResponse(HttpStatusCode.OK, listPostCatagoryViewModel);
 
                 return _httpResponseMessage;
             });

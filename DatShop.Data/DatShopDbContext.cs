@@ -1,4 +1,5 @@
 ﻿using DatShop.Model.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DatShop.Data
 {
-    public class DatShopDbContext: DbContext
+    public class DatShopDbContext: IdentityDbContext<ApplicationUser>
     {
         public DatShopDbContext (): base("DatShopConnectionString")
         {
@@ -35,6 +36,11 @@ namespace DatShop.Data
 
         public DbSet<PostTag> PostTags { set; get; }
         public DbSet<Error> Errors { set; get; }
+
+        public static DatShopDbContext Create()
+        {
+            return new DatShopDbContext();
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
