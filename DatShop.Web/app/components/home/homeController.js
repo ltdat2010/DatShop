@@ -1,11 +1,11 @@
-﻿(function (app)
-{
+﻿//(function (app)
+//{
 
-    app.controller('homeController', homeController);    
+//    app.controller('homeController', homeController);    
 
-    function homeController() { }
+//    function homeController() { }
     
-})(angular.module('datshop'));
+//})(angular.module('datshop'));
 
-//var myApp = angular.module('datshop',[])
-//    .controller('homeController', [function (){ }] );
+var myApp = angular.module('datshop',[])
+    .controller('homeController', [function homeController(){ }] );

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatShop.UnitTest", "DatShop
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatShop.Web", "DatShop.Web\DatShop.Web.csproj", "{B3F6A3FC-4D27-453F-B3E9-7E436027959B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTest", "WebTest\WebTest.csproj", "{BF282546-3C13-47E9-8E20-0EB00072A097}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{B3F6A3FC-4D27-453F-B3E9-7E436027959B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3F6A3FC-4D27-453F-B3E9-7E436027959B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3F6A3FC-4D27-453F-B3E9-7E436027959B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF282546-3C13-47E9-8E20-0EB00072A097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF282546-3C13-47E9-8E20-0EB00072A097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF282546-3C13-47E9-8E20-0EB00072A097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF282546-3C13-47E9-8E20-0EB00072A097}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
