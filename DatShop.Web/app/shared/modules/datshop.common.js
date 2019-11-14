@@ -1,3 +1,3 @@
 ﻿(function () {
-    angular.module('datshop.common', ['ui.router'])
+    angular.module('DatShop.common', ['ui.router'])
 })();

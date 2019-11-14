@@ -1,11 +1,9 @@
-﻿//(function (app)
-//{
+﻿(function (app) {
+    app.controller('homeController', homeController);
 
-//    app.controller('homeController', homeController);    
+    function homeController() {
+    }
+})(angular.module('DatShop'));
 
-//    function homeController() { }
-    
-//})(angular.module('datshop'));
-
-var myApp = angular.module('datshop',[])
-    .controller('homeController', [function homeController(){ }] );
+//var myApp = angular.module('datshop',[])
+//    .controller('homeController', [function homeController(){ }] );
